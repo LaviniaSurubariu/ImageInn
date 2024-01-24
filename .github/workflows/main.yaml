@@ -10,10 +10,11 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
+      - name: Create .env file
+        run: |
+          echo "API_KEY=${{ secrets.API_KEY }}" > .env
       - name: analyze code
         run: flutter analyze
       - name: check format
         run: dart format -l 120 --set-exit-if-changed ./lib
-      - name: Create .env file
-        run: |
-          echo "API_KEY=${{ secrets.API_KEY }}" > .env
+
