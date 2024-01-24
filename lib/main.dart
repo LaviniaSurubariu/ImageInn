@@ -14,7 +14,6 @@ import 'src/reducer/reducer.dart';
 Future<dynamic> main() async {
   await dotenv.load();
 
-
   final Client client = Client();
   final ImageApi api = ImageApi(dotenv.env['API_KEY']!, client);
   final AppEpics appEpic = AppEpics(api);
