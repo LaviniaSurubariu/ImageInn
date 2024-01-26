@@ -9,6 +9,7 @@ class AppState with _$AppState {
   const factory AppState({
     @Default(<UnsplashImage>[]) List<UnsplashImage> unsplashImages,
     @Default(false) bool isLoading,
+    @Default(1) int page,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));

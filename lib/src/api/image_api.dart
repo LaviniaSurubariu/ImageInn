@@ -9,7 +9,8 @@ class ImageApi {
   final String _accessKey;
   final Client _client;
 
-  Future<List<UnsplashImage>> loadItems(int page, String query, String color, {bool isSearching = false}) async {
+  Future<List<UnsplashImage>> loadItems(int page,
+      {String query = '', String color = '', bool isSearching = false}) async {
     final Response response;
     final List<dynamic> imgData;
 

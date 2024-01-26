@@ -22,6 +22,7 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 mixin _$AppState {
   List<UnsplashImage> get unsplashImages => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  int get page => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -32,7 +33,7 @@ mixin _$AppState {
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
-  $Res call({List<UnsplashImage> unsplashImages, bool isLoading});
+  $Res call({List<UnsplashImage> unsplashImages, bool isLoading, int page});
 }
 
 /// @nodoc
@@ -49,6 +50,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
   $Res call({
     Object? unsplashImages = null,
     Object? isLoading = null,
+    Object? page = null,
   }) {
     return _then(_value.copyWith(
       unsplashImages: null == unsplashImages
@@ -59,6 +61,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      page: null == page
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -69,7 +75,7 @@ abstract class _$$AppState$ImplCopyWith<$Res> implements $AppStateCopyWith<$Res>
       __$$AppState$ImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<UnsplashImage> unsplashImages, bool isLoading});
+  $Res call({List<UnsplashImage> unsplashImages, bool isLoading, int page});
 }
 
 /// @nodoc
@@ -82,6 +88,7 @@ class __$$AppState$ImplCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _
   $Res call({
     Object? unsplashImages = null,
     Object? isLoading = null,
+    Object? page = null,
   }) {
     return _then(_$AppState$Impl(
       unsplashImages: null == unsplashImages
@@ -92,6 +99,10 @@ class __$$AppState$ImplCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      page: null == page
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -99,7 +110,8 @@ class __$$AppState$ImplCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _
 /// @nodoc
 @JsonSerializable()
 class _$AppState$Impl implements AppState$ {
-  const _$AppState$Impl({final List<UnsplashImage> unsplashImages = const <UnsplashImage>[], this.isLoading = false})
+  const _$AppState$Impl(
+      {final List<UnsplashImage> unsplashImages = const <UnsplashImage>[], this.isLoading = false, this.page = 1})
       : _unsplashImages = unsplashImages;
 
   factory _$AppState$Impl.fromJson(Map<String, dynamic> json) => _$$AppState$ImplFromJson(json);
@@ -116,10 +128,13 @@ class _$AppState$Impl implements AppState$ {
   @override
   @JsonKey()
   final bool isLoading;
+  @override
+  @JsonKey()
+  final int page;
 
   @override
   String toString() {
-    return 'AppState(unsplashImages: $unsplashImages, isLoading: $isLoading)';
+    return 'AppState(unsplashImages: $unsplashImages, isLoading: $isLoading, page: $page)';
   }
 
   @override
@@ -128,12 +143,13 @@ class _$AppState$Impl implements AppState$ {
         (other.runtimeType == runtimeType &&
             other is _$AppState$Impl &&
             const DeepCollectionEquality().equals(other._unsplashImages, _unsplashImages) &&
-            (identical(other.isLoading, isLoading) || other.isLoading == isLoading));
+            (identical(other.isLoading, isLoading) || other.isLoading == isLoading) &&
+            (identical(other.page, page) || other.page == page));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_unsplashImages), isLoading);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_unsplashImages), isLoading, page);
 
   @JsonKey(ignore: true)
   @override
@@ -150,7 +166,8 @@ class _$AppState$Impl implements AppState$ {
 }
 
 abstract class AppState$ implements AppState {
-  const factory AppState$({final List<UnsplashImage> unsplashImages, final bool isLoading}) = _$AppState$Impl;
+  const factory AppState$({final List<UnsplashImage> unsplashImages, final bool isLoading, final int page}) =
+      _$AppState$Impl;
 
   factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$Impl.fromJson;
 
@@ -158,6 +175,8 @@ abstract class AppState$ implements AppState {
   List<UnsplashImage> get unsplashImages;
   @override
   bool get isLoading;
+  @override
+  int get page;
   @override
   @JsonKey(ignore: true)
   _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith => throw _privateConstructorUsedError;

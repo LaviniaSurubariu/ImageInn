@@ -15,15 +15,16 @@ AppState reducer(AppState state, dynamic action) {
   ])(state, action);
 }
 
+AppState _loadItemsStart(AppState state, LoadItemsStart action) {
+  return state.copyWith(isLoading: true);
+}
+
 AppState _loadItemsSuccessful(AppState state, LoadItemsSuccessful action) {
   return state.copyWith(
     isLoading: false,
+    page: state.page + 1,
     unsplashImages: <UnsplashImage>[...state.unsplashImages, ...action.unsplashImages],
   );
-}
-
-AppState _loadItemsStart(AppState state, LoadItemsStart action) {
-  return state.copyWith(isLoading: true);
 }
 
 AppState _loadItemsError(AppState state, LoadItemsError action) {

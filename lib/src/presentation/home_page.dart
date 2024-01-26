@@ -21,13 +21,29 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    context.dispatch(const LoadItems(1, '', ''));
+    context.dispatch(const LoadItems());
+    controller.addListener(_onScroll);
   }
 
   Future<void> followlink(Uri uri) async {
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
     }
+  }
+
+  void _onScroll() {
+    final double offset = controller.offset;
+    final double maxExtend = controller.position.maxScrollExtent;
+
+    if (!context.state.isLoading && offset > maxExtend * 0.8) {
+      context.dispatch(const LoadItems());
+    }
+  }
+
+  @override
+  void dispose() {
+    controller.removeListener(_onScroll);
+    super.dispose();
   }
 
   @override
