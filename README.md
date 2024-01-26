@@ -10,10 +10,5 @@ This is a Flutter application that interacts with the Unsplash API to display im
 - **User Authentication**: Enables users to log in to access more features.
 - **Reviews**: Logged in users can leave reviews on images and view reviews left by others.
 
-## Getting Started
-1. Clone this repository.
-2. Install Flutter and other dependencies.
-3. Run the application.
-
 ## License
 This project is licensed under the terms of the MIT license.
