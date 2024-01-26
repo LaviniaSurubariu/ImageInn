@@ -73,25 +73,24 @@ class _HomePageState extends State<HomePage> {
                       controller: textController,
                       onChanged: (String value) {
                         context.dispatch(SetQuery(value));
-                        if(context.state.query.isEmpty){
+                        if (context.state.query.isEmpty) {
                           context.dispatch(const SetColor(''));
                         }
                         context.dispatch(const LoadItems());
                       },
                     ),
-                  ), Wrap(
+                  ),
+                  Wrap(
                     children: allColors.map(
-                          (String item) {
+                      (String item) {
                         return ChoiceChip(
                           label: Text(item),
-                          selected: context.state.color ==item ||false,
+                          selected: context.state.color == item || false,
                           onSelected: (bool selected) {
                             if (context.state.query.isNotEmpty) {
-                              context
-                                  .dispatch(SetColor(selected ? item : ''));
+                              context.dispatch(SetColor(selected ? item : ''));
                             }
-                            context
-                                .dispatch(const LoadItems());
+                            context.dispatch(const LoadItems());
                           },
                         );
                       },
@@ -109,7 +108,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         SliverList(
                           delegate: SliverChildBuilderDelegate(
-                                (BuildContext context, int index) {
+                            (BuildContext context, int index) {
                               final UnsplashImage unsplashImage = images[index];
 
                               return Column(

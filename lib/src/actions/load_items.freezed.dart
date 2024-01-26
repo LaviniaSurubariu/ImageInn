@@ -64,13 +64,11 @@ mixin _$LoadItems {
 
 /// @nodoc
 abstract class $LoadItemsCopyWith<$Res> {
-  factory $LoadItemsCopyWith(LoadItems value, $Res Function(LoadItems) then) =
-      _$LoadItemsCopyWithImpl<$Res, LoadItems>;
+  factory $LoadItemsCopyWith(LoadItems value, $Res Function(LoadItems) then) = _$LoadItemsCopyWithImpl<$Res, LoadItems>;
 }
 
 /// @nodoc
-class _$LoadItemsCopyWithImpl<$Res, $Val extends LoadItems>
-    implements $LoadItemsCopyWith<$Res> {
+class _$LoadItemsCopyWithImpl<$Res, $Val extends LoadItems> implements $LoadItemsCopyWith<$Res> {
   _$LoadItemsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -81,19 +79,16 @@ class _$LoadItemsCopyWithImpl<$Res, $Val extends LoadItems>
 
 /// @nodoc
 abstract class _$$LoadItemsStartImplCopyWith<$Res> {
-  factory _$$LoadItemsStartImplCopyWith(_$LoadItemsStartImpl value,
-          $Res Function(_$LoadItemsStartImpl) then) =
+  factory _$$LoadItemsStartImplCopyWith(_$LoadItemsStartImpl value, $Res Function(_$LoadItemsStartImpl) then) =
       __$$LoadItemsStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isSearching});
 }
 
 /// @nodoc
-class __$$LoadItemsStartImplCopyWithImpl<$Res>
-    extends _$LoadItemsCopyWithImpl<$Res, _$LoadItemsStartImpl>
+class __$$LoadItemsStartImplCopyWithImpl<$Res> extends _$LoadItemsCopyWithImpl<$Res, _$LoadItemsStartImpl>
     implements _$$LoadItemsStartImplCopyWith<$Res> {
-  __$$LoadItemsStartImplCopyWithImpl(
-      _$LoadItemsStartImpl _value, $Res Function(_$LoadItemsStartImpl) _then)
+  __$$LoadItemsStartImplCopyWithImpl(_$LoadItemsStartImpl _value, $Res Function(_$LoadItemsStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -129,8 +124,7 @@ class _$LoadItemsStartImpl implements LoadItemsStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadItemsStartImpl &&
-            (identical(other.isSearching, isSearching) ||
-                other.isSearching == isSearching));
+            (identical(other.isSearching, isSearching) || other.isSearching == isSearching));
   }
 
   @override
@@ -140,8 +134,7 @@ class _$LoadItemsStartImpl implements LoadItemsStart {
   @override
   @pragma('vm:prefer-inline')
   _$$LoadItemsStartImplCopyWith<_$LoadItemsStartImpl> get copyWith =>
-      __$$LoadItemsStartImplCopyWithImpl<_$LoadItemsStartImpl>(
-          this, _$identity);
+      __$$LoadItemsStartImplCopyWithImpl<_$LoadItemsStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -217,25 +210,23 @@ abstract class LoadItemsStart implements LoadItems {
 
   bool get isSearching;
   @JsonKey(ignore: true)
-  _$$LoadItemsStartImplCopyWith<_$LoadItemsStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LoadItemsStartImplCopyWith<_$LoadItemsStartImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$LoadItemsSuccessfulImplCopyWith<$Res> {
-  factory _$$LoadItemsSuccessfulImplCopyWith(_$LoadItemsSuccessfulImpl value,
-          $Res Function(_$LoadItemsSuccessfulImpl) then) =
+  factory _$$LoadItemsSuccessfulImplCopyWith(
+          _$LoadItemsSuccessfulImpl value, $Res Function(_$LoadItemsSuccessfulImpl) then) =
       __$$LoadItemsSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<UnsplashImage> unsplashImages});
 }
 
 /// @nodoc
-class __$$LoadItemsSuccessfulImplCopyWithImpl<$Res>
-    extends _$LoadItemsCopyWithImpl<$Res, _$LoadItemsSuccessfulImpl>
+class __$$LoadItemsSuccessfulImplCopyWithImpl<$Res> extends _$LoadItemsCopyWithImpl<$Res, _$LoadItemsSuccessfulImpl>
     implements _$$LoadItemsSuccessfulImplCopyWith<$Res> {
-  __$$LoadItemsSuccessfulImplCopyWithImpl(_$LoadItemsSuccessfulImpl _value,
-      $Res Function(_$LoadItemsSuccessfulImpl) _then)
+  __$$LoadItemsSuccessfulImplCopyWithImpl(
+      _$LoadItemsSuccessfulImpl _value, $Res Function(_$LoadItemsSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -255,8 +246,7 @@ class __$$LoadItemsSuccessfulImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadItemsSuccessfulImpl implements LoadItemsSuccessful {
-  const _$LoadItemsSuccessfulImpl(final List<UnsplashImage> unsplashImages)
-      : _unsplashImages = unsplashImages;
+  const _$LoadItemsSuccessfulImpl(final List<UnsplashImage> unsplashImages) : _unsplashImages = unsplashImages;
 
   final List<UnsplashImage> _unsplashImages;
   @override
@@ -276,20 +266,17 @@ class _$LoadItemsSuccessfulImpl implements LoadItemsSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadItemsSuccessfulImpl &&
-            const DeepCollectionEquality()
-                .equals(other._unsplashImages, _unsplashImages));
+            const DeepCollectionEquality().equals(other._unsplashImages, _unsplashImages));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_unsplashImages));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_unsplashImages));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadItemsSuccessfulImplCopyWith<_$LoadItemsSuccessfulImpl> get copyWith =>
-      __$$LoadItemsSuccessfulImplCopyWithImpl<_$LoadItemsSuccessfulImpl>(
-          this, _$identity);
+      __$$LoadItemsSuccessfulImplCopyWithImpl<_$LoadItemsSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -361,30 +348,25 @@ class _$LoadItemsSuccessfulImpl implements LoadItemsSuccessful {
 }
 
 abstract class LoadItemsSuccessful implements LoadItems {
-  const factory LoadItemsSuccessful(final List<UnsplashImage> unsplashImages) =
-      _$LoadItemsSuccessfulImpl;
+  const factory LoadItemsSuccessful(final List<UnsplashImage> unsplashImages) = _$LoadItemsSuccessfulImpl;
 
   List<UnsplashImage> get unsplashImages;
   @JsonKey(ignore: true)
-  _$$LoadItemsSuccessfulImplCopyWith<_$LoadItemsSuccessfulImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LoadItemsSuccessfulImplCopyWith<_$LoadItemsSuccessfulImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$LoadItemsErrorImplCopyWith<$Res> {
-  factory _$$LoadItemsErrorImplCopyWith(_$LoadItemsErrorImpl value,
-          $Res Function(_$LoadItemsErrorImpl) then) =
+  factory _$$LoadItemsErrorImplCopyWith(_$LoadItemsErrorImpl value, $Res Function(_$LoadItemsErrorImpl) then) =
       __$$LoadItemsErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$LoadItemsErrorImplCopyWithImpl<$Res>
-    extends _$LoadItemsCopyWithImpl<$Res, _$LoadItemsErrorImpl>
+class __$$LoadItemsErrorImplCopyWithImpl<$Res> extends _$LoadItemsCopyWithImpl<$Res, _$LoadItemsErrorImpl>
     implements _$$LoadItemsErrorImplCopyWith<$Res> {
-  __$$LoadItemsErrorImplCopyWithImpl(
-      _$LoadItemsErrorImpl _value, $Res Function(_$LoadItemsErrorImpl) _then)
+  __$$LoadItemsErrorImplCopyWithImpl(_$LoadItemsErrorImpl _value, $Res Function(_$LoadItemsErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -424,20 +406,17 @@ class _$LoadItemsErrorImpl implements LoadItemsError {
         (other.runtimeType == runtimeType &&
             other is _$LoadItemsErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadItemsErrorImplCopyWith<_$LoadItemsErrorImpl> get copyWith =>
-      __$$LoadItemsErrorImplCopyWithImpl<_$LoadItemsErrorImpl>(
-          this, _$identity);
+      __$$LoadItemsErrorImplCopyWithImpl<_$LoadItemsErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -509,12 +488,10 @@ class _$LoadItemsErrorImpl implements LoadItemsError {
 }
 
 abstract class LoadItemsError implements LoadItems, ErrorAction {
-  const factory LoadItemsError(
-      final Object error, final StackTrace stackTrace) = _$LoadItemsErrorImpl;
+  const factory LoadItemsError(final Object error, final StackTrace stackTrace) = _$LoadItemsErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$LoadItemsErrorImplCopyWith<_$LoadItemsErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LoadItemsErrorImplCopyWith<_$LoadItemsErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

@@ -8,6 +8,7 @@ part 'set.freezed.dart';
 class SetQuery with _$SetQuery implements AppAction {
   const factory SetQuery(String query) = SetQuery$;
 }
+
 @freezed
 class SetColor with _$SetColor implements AppAction {
   const factory SetColor(String color) = SetColor$;
