@@ -19,18 +19,21 @@ mixin _$SetQuery {
   String get query => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SetQueryCopyWith<SetQuery> get copyWith => throw _privateConstructorUsedError;
+  $SetQueryCopyWith<SetQuery> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetQueryCopyWith<$Res> {
-  factory $SetQueryCopyWith(SetQuery value, $Res Function(SetQuery) then) = _$SetQueryCopyWithImpl<$Res, SetQuery>;
+  factory $SetQueryCopyWith(SetQuery value, $Res Function(SetQuery) then) =
+      _$SetQueryCopyWithImpl<$Res, SetQuery>;
   @useResult
   $Res call({String query});
 }
 
 /// @nodoc
-class _$SetQueryCopyWithImpl<$Res, $Val extends SetQuery> implements $SetQueryCopyWith<$Res> {
+class _$SetQueryCopyWithImpl<$Res, $Val extends SetQuery>
+    implements $SetQueryCopyWith<$Res> {
   _$SetQueryCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -53,8 +56,10 @@ class _$SetQueryCopyWithImpl<$Res, $Val extends SetQuery> implements $SetQueryCo
 }
 
 /// @nodoc
-abstract class _$$SetQuery$ImplCopyWith<$Res> implements $SetQueryCopyWith<$Res> {
-  factory _$$SetQuery$ImplCopyWith(_$SetQuery$Impl value, $Res Function(_$SetQuery$Impl) then) =
+abstract class _$$SetQuery$ImplCopyWith<$Res>
+    implements $SetQueryCopyWith<$Res> {
+  factory _$$SetQuery$ImplCopyWith(
+          _$SetQuery$Impl value, $Res Function(_$SetQuery$Impl) then) =
       __$$SetQuery$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -62,9 +67,12 @@ abstract class _$$SetQuery$ImplCopyWith<$Res> implements $SetQueryCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SetQuery$ImplCopyWithImpl<$Res> extends _$SetQueryCopyWithImpl<$Res, _$SetQuery$Impl>
+class __$$SetQuery$ImplCopyWithImpl<$Res>
+    extends _$SetQueryCopyWithImpl<$Res, _$SetQuery$Impl>
     implements _$$SetQuery$ImplCopyWith<$Res> {
-  __$$SetQuery$ImplCopyWithImpl(_$SetQuery$Impl _value, $Res Function(_$SetQuery$Impl) _then) : super(_value, _then);
+  __$$SetQuery$ImplCopyWithImpl(
+      _$SetQuery$Impl _value, $Res Function(_$SetQuery$Impl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -118,5 +126,122 @@ abstract class SetQuery$ implements SetQuery {
   String get query;
   @override
   @JsonKey(ignore: true)
-  _$$SetQuery$ImplCopyWith<_$SetQuery$Impl> get copyWith => throw _privateConstructorUsedError;
+  _$$SetQuery$ImplCopyWith<_$SetQuery$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$SetColor {
+  String get color => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SetColorCopyWith<SetColor> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SetColorCopyWith<$Res> {
+  factory $SetColorCopyWith(SetColor value, $Res Function(SetColor) then) =
+      _$SetColorCopyWithImpl<$Res, SetColor>;
+  @useResult
+  $Res call({String color});
+}
+
+/// @nodoc
+class _$SetColorCopyWithImpl<$Res, $Val extends SetColor>
+    implements $SetColorCopyWith<$Res> {
+  _$SetColorCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? color = null,
+  }) {
+    return _then(_value.copyWith(
+      color: null == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SetColor$ImplCopyWith<$Res>
+    implements $SetColorCopyWith<$Res> {
+  factory _$$SetColor$ImplCopyWith(
+          _$SetColor$Impl value, $Res Function(_$SetColor$Impl) then) =
+      __$$SetColor$ImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String color});
+}
+
+/// @nodoc
+class __$$SetColor$ImplCopyWithImpl<$Res>
+    extends _$SetColorCopyWithImpl<$Res, _$SetColor$Impl>
+    implements _$$SetColor$ImplCopyWith<$Res> {
+  __$$SetColor$ImplCopyWithImpl(
+      _$SetColor$Impl _value, $Res Function(_$SetColor$Impl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? color = null,
+  }) {
+    return _then(_$SetColor$Impl(
+      null == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetColor$Impl implements SetColor$ {
+  const _$SetColor$Impl(this.color);
+
+  @override
+  final String color;
+
+  @override
+  String toString() {
+    return 'SetColor(color: $color)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetColor$Impl &&
+            (identical(other.color, color) || other.color == color));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, color);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetColor$ImplCopyWith<_$SetColor$Impl> get copyWith =>
+      __$$SetColor$ImplCopyWithImpl<_$SetColor$Impl>(this, _$identity);
+}
+
+abstract class SetColor$ implements SetColor {
+  const factory SetColor$(final String color) = _$SetColor$Impl;
+
+  @override
+  String get color;
+  @override
+  @JsonKey(ignore: true)
+  _$$SetColor$ImplCopyWith<_$SetColor$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

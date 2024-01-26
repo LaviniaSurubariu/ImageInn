@@ -66,21 +66,41 @@ class _HomePageState extends State<HomePage> {
               ),
               body: Column(
                 children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextField(
+                      decoration: const InputDecoration(hintText: 'search'),
+                      controller: textController,
+                      onChanged: (String value) {
+                        context.dispatch(SetQuery(value));
+                        if(context.state.query.isEmpty){
+                          context.dispatch(const SetColor(''));
+                        }
+                        context.dispatch(const LoadItems());
+                      },
+                    ),
+                  ), Wrap(
+                    children: allColors.map(
+                          (String item) {
+                        return ChoiceChip(
+                          label: Text(item),
+                          selected: context.state.color ==item ||false,
+                          onSelected: (bool selected) {
+                            if (context.state.query.isNotEmpty) {
+                              context
+                                  .dispatch(SetColor(selected ? item : ''));
+                            }
+                            context
+                                .dispatch(const LoadItems());
+                          },
+                        );
+                      },
+                    ).toList(),
+                  ),
                   Expanded(
                     child: CustomScrollView(
                       controller: controller,
                       slivers: <Widget>[
-                        SliverToBoxAdapter(
-                          child: TextField(
-                            decoration: const InputDecoration(hintText: 'search'),
-                            controller: textController,
-                            onChanged: (String value) {
-                              context
-                                ..dispatch(SetQuery(value))
-                                ..dispatch(const LoadItems());
-                            },
-                          ),
-                        ),
                         if (!isLoading && images.isEmpty)
                           const SliverToBoxAdapter(
                             child: Center(
@@ -89,7 +109,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         SliverList(
                           delegate: SliverChildBuilderDelegate(
-                            (BuildContext context, int index) {
+                                (BuildContext context, int index) {
                               final UnsplashImage unsplashImage = images[index];
 
                               return Column(

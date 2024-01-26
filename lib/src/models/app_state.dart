@@ -11,6 +11,7 @@ class AppState with _$AppState {
     @Default(false) bool isLoading,
     @Default(1) int page,
     @Default('') String query,
+    @Default('') String color,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));

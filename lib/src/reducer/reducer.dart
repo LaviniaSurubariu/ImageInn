@@ -14,6 +14,7 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, LoadItemsStart>(_loadItemsStart).call,
     TypedReducer<AppState, LoadItemsError>(_loadItemsError).call,
     TypedReducer<AppState, SetQuery>(_setQuery).call,
+    TypedReducer<AppState, SetColor>(_setColor).call,
   ])(state, action);
 }
 
@@ -38,6 +39,14 @@ AppState _loadItemsError(AppState state, LoadItemsError action) {
 AppState _setQuery(AppState state, SetQuery action) {
   return state.copyWith(
     query: action.query,
+    page: 1,
+    unsplashImages: <UnsplashImage>[],
+  );
+}
+
+AppState _setColor(AppState state, SetColor action) {
+  return state.copyWith(
+    color: action.color,
     page: 1,
     unsplashImages: <UnsplashImage>[],
   );
