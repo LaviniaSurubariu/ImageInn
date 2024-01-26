@@ -8,6 +8,7 @@ part 'app_state.g.dart';
 class AppState with _$AppState {
   const factory AppState({
     @Default(<UnsplashImage>[]) List<UnsplashImage> unsplashImages,
+    @Default(false) bool isLoading,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));

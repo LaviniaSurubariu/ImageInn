@@ -42,6 +42,7 @@ class ImageApi {
       imgData = json.decode(response.body) as List<dynamic>;
     }
 
+    await Future<dynamic>.delayed(const Duration(seconds: 2));
     return imgData.map((dynamic item) => UnsplashImage.fromJson(item as Map<String, dynamic>)).toList();
   }
 }
