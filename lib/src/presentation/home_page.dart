@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../actions/load_items.dart';
+import '../actions/set.dart';
 import '../models/unsplash_image.dart';
 import 'containers/images_container.dart';
 import 'containers/is_loading_container.dart';
@@ -17,6 +18,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final ScrollController controller = ScrollController();
+  final TextEditingController textController = TextEditingController();
 
   @override
   void initState() {
@@ -68,6 +70,17 @@ class _HomePageState extends State<HomePage> {
                     child: CustomScrollView(
                       controller: controller,
                       slivers: <Widget>[
+                        SliverToBoxAdapter(
+                          child: TextField(
+                            decoration: const InputDecoration(hintText: 'search'),
+                            controller: textController,
+                            onChanged: (String value) {
+                              context
+                                ..dispatch(SetQuery(value))
+                                ..dispatch(const LoadItems());
+                            },
+                          ),
+                        ),
                         if (!isLoading && images.isEmpty)
                           const SliverToBoxAdapter(
                             child: Center(
@@ -170,3 +183,17 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+final List<String> allColors = <String>[
+  'black_and_white',
+  'black',
+  'white',
+  'yellow',
+  'orange',
+  'red',
+  'purple',
+  'magenta',
+  'green',
+  'teal',
+  'blue'
+];

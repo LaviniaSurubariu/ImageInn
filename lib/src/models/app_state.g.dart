@@ -14,10 +14,12 @@ _$AppState$Impl _$$AppState$ImplFromJson(Map<String, dynamic> json) => _$AppStat
           const <UnsplashImage>[],
       isLoading: json['isLoading'] as bool? ?? false,
       page: json['page'] as int? ?? 1,
+      query: json['query'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) => <String, dynamic>{
       'unsplashImages': instance.unsplashImages,
       'isLoading': instance.isLoading,
       'page': instance.page,
+      'query': instance.query,
     };

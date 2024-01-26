@@ -18,21 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$LoadItems {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String query, String color, bool isSearching) $default, {
+    TResult Function(String color, bool isSearching) $default, {
     required TResult Function(List<UnsplashImage> unsplashImages) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String query, String color, bool isSearching)? $default, {
+    TResult? Function(String color, bool isSearching)? $default, {
     TResult? Function(List<UnsplashImage> unsplashImages)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String query, String color, bool isSearching)? $default, {
+    TResult Function(String color, bool isSearching)? $default, {
     TResult Function(List<UnsplashImage> unsplashImages)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -82,7 +82,7 @@ abstract class _$$LoadItemsStartImplCopyWith<$Res> {
   factory _$$LoadItemsStartImplCopyWith(_$LoadItemsStartImpl value, $Res Function(_$LoadItemsStartImpl) then) =
       __$$LoadItemsStartImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String query, String color, bool isSearching});
+  $Res call({String color, bool isSearching});
 }
 
 /// @nodoc
@@ -94,15 +94,10 @@ class __$$LoadItemsStartImplCopyWithImpl<$Res> extends _$LoadItemsCopyWithImpl<$
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = null,
     Object? color = null,
     Object? isSearching = null,
   }) {
     return _then(_$LoadItemsStartImpl(
-      query: null == query
-          ? _value.query
-          : query // ignore: cast_nullable_to_non_nullable
-              as String,
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
@@ -118,11 +113,8 @@ class __$$LoadItemsStartImplCopyWithImpl<$Res> extends _$LoadItemsCopyWithImpl<$
 /// @nodoc
 
 class _$LoadItemsStartImpl implements LoadItemsStart {
-  const _$LoadItemsStartImpl({this.query = '', this.color = '', this.isSearching = false});
+  const _$LoadItemsStartImpl({this.color = '', this.isSearching = false});
 
-  @override
-  @JsonKey()
-  final String query;
   @override
   @JsonKey()
   final String color;
@@ -132,7 +124,7 @@ class _$LoadItemsStartImpl implements LoadItemsStart {
 
   @override
   String toString() {
-    return 'LoadItems(query: $query, color: $color, isSearching: $isSearching)';
+    return 'LoadItems(color: $color, isSearching: $isSearching)';
   }
 
   @override
@@ -140,13 +132,12 @@ class _$LoadItemsStartImpl implements LoadItemsStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadItemsStartImpl &&
-            (identical(other.query, query) || other.query == query) &&
             (identical(other.color, color) || other.color == color) &&
             (identical(other.isSearching, isSearching) || other.isSearching == isSearching));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, query, color, isSearching);
+  int get hashCode => Object.hash(runtimeType, color, isSearching);
 
   @JsonKey(ignore: true)
   @override
@@ -157,33 +148,33 @@ class _$LoadItemsStartImpl implements LoadItemsStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String query, String color, bool isSearching) $default, {
+    TResult Function(String color, bool isSearching) $default, {
     required TResult Function(List<UnsplashImage> unsplashImages) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
-    return $default(query, color, isSearching);
+    return $default(color, isSearching);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String query, String color, bool isSearching)? $default, {
+    TResult? Function(String color, bool isSearching)? $default, {
     TResult? Function(List<UnsplashImage> unsplashImages)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
-    return $default?.call(query, color, isSearching);
+    return $default?.call(color, isSearching);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String query, String color, bool isSearching)? $default, {
+    TResult Function(String color, bool isSearching)? $default, {
     TResult Function(List<UnsplashImage> unsplashImages)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(query, color, isSearching);
+      return $default(color, isSearching);
     }
     return orElse();
   }
@@ -224,9 +215,8 @@ class _$LoadItemsStartImpl implements LoadItemsStart {
 }
 
 abstract class LoadItemsStart implements LoadItems {
-  const factory LoadItemsStart({final String query, final String color, final bool isSearching}) = _$LoadItemsStartImpl;
+  const factory LoadItemsStart({final String color, final bool isSearching}) = _$LoadItemsStartImpl;
 
-  String get query;
   String get color;
   bool get isSearching;
   @JsonKey(ignore: true)
@@ -301,7 +291,7 @@ class _$LoadItemsSuccessfulImpl implements LoadItemsSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String query, String color, bool isSearching) $default, {
+    TResult Function(String color, bool isSearching) $default, {
     required TResult Function(List<UnsplashImage> unsplashImages) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -311,7 +301,7 @@ class _$LoadItemsSuccessfulImpl implements LoadItemsSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String query, String color, bool isSearching)? $default, {
+    TResult? Function(String color, bool isSearching)? $default, {
     TResult? Function(List<UnsplashImage> unsplashImages)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -321,7 +311,7 @@ class _$LoadItemsSuccessfulImpl implements LoadItemsSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String query, String color, bool isSearching)? $default, {
+    TResult Function(String color, bool isSearching)? $default, {
     TResult Function(List<UnsplashImage> unsplashImages)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -441,7 +431,7 @@ class _$LoadItemsErrorImpl implements LoadItemsError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String query, String color, bool isSearching) $default, {
+    TResult Function(String color, bool isSearching) $default, {
     required TResult Function(List<UnsplashImage> unsplashImages) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -451,7 +441,7 @@ class _$LoadItemsErrorImpl implements LoadItemsError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String query, String color, bool isSearching)? $default, {
+    TResult? Function(String color, bool isSearching)? $default, {
     TResult? Function(List<UnsplashImage> unsplashImages)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -461,7 +451,7 @@ class _$LoadItemsErrorImpl implements LoadItemsError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String query, String color, bool isSearching)? $default, {
+    TResult Function(String color, bool isSearching)? $default, {
     TResult Function(List<UnsplashImage> unsplashImages)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
