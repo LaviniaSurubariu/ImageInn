@@ -196,16 +196,27 @@ class _HomePageState extends State<HomePage> {
                                               ],
                                             ),
                                           ),
-                                          ListTile(
-                                            title: Text(
-                                              unsplashImage.description ?? 'No description',
-                                              style: const TextStyle(fontWeight: FontWeight.bold),
+                                          const SizedBox(height: 32.0),
+                                          Center(
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: <Widget>[
+                                                Text(
+                                                  unsplashImage.description ?? 'No description',
+                                                  style: const TextStyle(fontWeight: FontWeight.bold),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                                TextButton(
+                                                  onPressed: () {
+                                                    followlink(Uri.parse(unsplashImage.authorPage.links.html));
+                                                  },
+                                                  child: Text(
+                                                    unsplashImage.authorPage.links.html,
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                              ],
                                             ),
-                                            subtitle: TextButton(
-                                                onPressed: () {
-                                                  followlink(Uri.parse(unsplashImage.authorPage.links.html));
-                                                },
-                                                child: Text(unsplashImage.authorPage.links.html)),
                                           ),
                                           const Divider(
                                             color: Colors.lightBlueAccent,
