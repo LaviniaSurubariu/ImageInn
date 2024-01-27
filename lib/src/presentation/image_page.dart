@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:photo_view/photo_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../actions/create_comment.dart';
@@ -46,8 +47,28 @@ class ImagePage extends StatelessWidget {
                                 height: 300,
                                 child: AspectRatio(
                                   aspectRatio: 1.2,
-                                  child: Image.network(
-                                    image.smallImage.small,
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute<void>(
+                                            builder: (BuildContext context) => Scaffold(
+                                              body: Center(
+                                                child: PhotoView(
+                                                  imageProvider: NetworkImage(image.smallImage.small),
+                                                  backgroundDecoration: const BoxDecoration(color: Colors.transparent),
+                                                  onTapUp: (BuildContext context, TapUpDetails details,
+                                                      PhotoViewControllerValue controller) {
+                                                    Navigator.pop(context);
+                                                  },
+                                                ),
+                                              ),
+                                            ),
+                                          ));
+                                    },
+                                    child: Image.network(
+                                      image.smallImage.small,
+                                    ),
                                   ),
                                 ),
                               ),
