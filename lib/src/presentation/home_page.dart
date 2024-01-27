@@ -191,7 +191,7 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                           ListTile(
                                             title: Text(
-                                              unsplashImage.description,
+                                              unsplashImage.description ?? 'No description',
                                               style: const TextStyle(fontWeight: FontWeight.bold),
                                             ),
                                             subtitle: TextButton(

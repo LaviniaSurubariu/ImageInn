@@ -7,7 +7,7 @@ part of 'unsplash_image.dart';
 // **************************************************************************
 
 _$UnsplashImage$Impl _$$UnsplashImage$ImplFromJson(Map<String, dynamic> json) => _$UnsplashImage$Impl(
-      description: json['alt_description'] as String,
+      description: json['alt_description'] as String?,
       imageId: json['id'] as String,
       smallImage: ImageUrls.fromJson(json['urls'] as Map<String, dynamic>),
       likes: json['likes'] as int,

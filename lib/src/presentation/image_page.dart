@@ -27,7 +27,7 @@ class ImagePage extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.blue,
-            title: Text(image.description),
+            title: Text(image.description ?? 'No description'),
             titleTextStyle: const TextStyle(
               color: Colors.white,
               fontSize: 20,
@@ -86,7 +86,7 @@ class ImagePage extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
-                                image.description,
+                                image.description ?? 'No description',
                                 style: const TextStyle(
                                   fontSize: 16.0,
                                 ),

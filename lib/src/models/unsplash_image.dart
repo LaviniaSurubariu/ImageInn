@@ -9,7 +9,7 @@ part 'unsplash_image.g.dart';
 @freezed
 class UnsplashImage with _$UnsplashImage {
   const factory UnsplashImage({
-    @JsonKey(name: 'alt_description') required String description,
+    @JsonKey(name: 'alt_description') required String? description,
     @JsonKey(name: 'id') required String imageId,
     @JsonKey(name: 'urls') required ImageUrls smallImage,
     required int likes,

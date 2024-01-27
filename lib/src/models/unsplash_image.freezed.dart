@@ -21,7 +21,7 @@ UnsplashImage _$UnsplashImageFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UnsplashImage {
   @JsonKey(name: 'alt_description')
-  String get description => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   @JsonKey(name: 'id')
   String get imageId => throw _privateConstructorUsedError;
   @JsonKey(name: 'urls')
@@ -41,7 +41,7 @@ abstract class $UnsplashImageCopyWith<$Res> {
       _$UnsplashImageCopyWithImpl<$Res, UnsplashImage>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'alt_description') String description,
+      {@JsonKey(name: 'alt_description') String? description,
       @JsonKey(name: 'id') String imageId,
       @JsonKey(name: 'urls') ImageUrls smallImage,
       int likes,
@@ -63,17 +63,17 @@ class _$UnsplashImageCopyWithImpl<$Res, $Val extends UnsplashImage> implements $
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? description = null,
+    Object? description = freezed,
     Object? imageId = null,
     Object? smallImage = null,
     Object? likes = null,
     Object? authorPage = null,
   }) {
     return _then(_value.copyWith(
-      description: null == description
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       imageId: null == imageId
           ? _value.imageId
           : imageId // ignore: cast_nullable_to_non_nullable
@@ -117,7 +117,7 @@ abstract class _$$UnsplashImage$ImplCopyWith<$Res> implements $UnsplashImageCopy
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'alt_description') String description,
+      {@JsonKey(name: 'alt_description') String? description,
       @JsonKey(name: 'id') String imageId,
       @JsonKey(name: 'urls') ImageUrls smallImage,
       int likes,
@@ -138,17 +138,17 @@ class __$$UnsplashImage$ImplCopyWithImpl<$Res> extends _$UnsplashImageCopyWithIm
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? description = null,
+    Object? description = freezed,
     Object? imageId = null,
     Object? smallImage = null,
     Object? likes = null,
     Object? authorPage = null,
   }) {
     return _then(_$UnsplashImage$Impl(
-      description: null == description
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       imageId: null == imageId
           ? _value.imageId
           : imageId // ignore: cast_nullable_to_non_nullable
@@ -183,7 +183,7 @@ class _$UnsplashImage$Impl implements UnsplashImage$ {
 
   @override
   @JsonKey(name: 'alt_description')
-  final String description;
+  final String? description;
   @override
   @JsonKey(name: 'id')
   final String imageId;
@@ -233,7 +233,7 @@ class _$UnsplashImage$Impl implements UnsplashImage$ {
 
 abstract class UnsplashImage$ implements UnsplashImage {
   const factory UnsplashImage$(
-      {@JsonKey(name: 'alt_description') required final String description,
+      {@JsonKey(name: 'alt_description') required final String? description,
       @JsonKey(name: 'id') required final String imageId,
       @JsonKey(name: 'urls') required final ImageUrls smallImage,
       required final int likes,
@@ -243,7 +243,7 @@ abstract class UnsplashImage$ implements UnsplashImage {
 
   @override
   @JsonKey(name: 'alt_description')
-  String get description;
+  String? get description;
   @override
   @JsonKey(name: 'id')
   String get imageId;
