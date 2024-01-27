@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../actions/create_user.dart';
+import '../actions/login.dart';
 import 'extensions.dart';
 
-class CreateUserPage extends StatefulWidget {
-  const CreateUserPage({super.key});
+class LoginUserPage extends StatefulWidget {
+  const LoginUserPage({super.key});
 
   @override
-  State<CreateUserPage> createState() => _CreateUserPageState();
+  State<LoginUserPage> createState() => _LoginUserPageState();
 }
 
-class _CreateUserPageState extends State<CreateUserPage> {
+class _LoginUserPageState extends State<LoginUserPage> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController email = TextEditingController();
   final TextEditingController password = TextEditingController();
@@ -21,7 +21,7 @@ class _CreateUserPageState extends State<CreateUserPage> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.blue,
-        title: const Text('Create User'),
+        title: const Text('Login User'),
         titleTextStyle: const TextStyle(
           color: Colors.white,
           fontSize: 24,
@@ -58,16 +58,16 @@ class _CreateUserPageState extends State<CreateUserPage> {
                 ElevatedButton(
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
-                      context.dispatch(CreateUser(email: email.text, password: password.text));
+                      context.dispatch(Login(email: email.text, password: password.text));
                     }
                   },
-                  child: const Text('Create user'),
+                  child: const Text('Login user'),
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/loginUser');
+                    Navigator.pushReplacementNamed(context, '/createUser');
                   },
-                  child: const Text('Login user'),
+                  child: const Text('Create user'),
                 ),
               ],
             ),

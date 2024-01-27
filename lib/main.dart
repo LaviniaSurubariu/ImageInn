@@ -15,6 +15,7 @@ import 'src/epics/app_epics.dart';
 import 'src/models/app_state.dart';
 import 'src/presentation/create_user.dart';
 import 'src/presentation/home_page.dart';
+import 'src/presentation/login_user.dart';
 import 'src/reducer/reducer.dart';
 
 Future<dynamic> main() async {
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget {
         home: const HomePage(),
         routes: <String, WidgetBuilder>{
           '/createUser': (BuildContext context) => const CreateUserPage(),
+          '/loginUser': (BuildContext context) => const LoginUserPage(),
         },
       ),
     );
