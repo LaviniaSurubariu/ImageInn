@@ -8,6 +8,7 @@ import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 
 import 'firebase_options.dart';
+import 'src/actions/get_current_user.dart';
 import 'src/api/auth_api.dart';
 import 'src/api/image_api.dart';
 import 'src/epics/app_epics.dart';
@@ -26,10 +27,14 @@ Future<dynamic> main() async {
   final AuthApi authApi = AuthApi(auth: auth);
   final AppEpics appEpic = AppEpics(api, authApi);
 
-  final Store<AppState> store =
-      Store<AppState>(reducer, initialState: const AppState(), middleware: <Middleware<AppState>>[
-    EpicMiddleware<AppState>(appEpic.call).call,
-  ]);
+  final Store<AppState> store = Store<AppState>(
+    reducer,
+    initialState: const AppState(),
+    middleware: <Middleware<AppState>>[
+      EpicMiddleware<AppState>(appEpic.call).call,
+    ],
+  );
+  store.dispatch(const GetCurrentUser());
 
   runApp(MyApp(store: store));
 }

@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../actions/load_items.dart';
 import '../actions/set.dart';
+import '../actions/sign_out.dart';
 import '../models/app_state.dart';
 import '../models/app_user.dart';
 import '../models/unsplash_image.dart';
@@ -73,11 +74,46 @@ class _HomePageState extends State<HomePage> {
                     appBar: AppBar(
                       centerTitle: true,
                       backgroundColor: Colors.blue,
-                      title: const Text('Unsplash Images'),
+                      title: const Text('ImageInn'),
                       titleTextStyle: const TextStyle(
                         color: Colors.white,
                         fontSize: 24,
                       ),
+                      actions: <Widget>[
+                        if (user != null)
+                          GestureDetector(
+                            onLongPress: () {
+                              showDialog<void>(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: const Text('Sign out'),
+                                    content: const Text('Are you sure you want to sign out?'),
+                                    actions: <Widget>[
+                                      TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: const Text('Cancel')),
+                                      TextButton(
+                                          onPressed: () {
+                                            context.dispatch(const SignOut());
+                                            Navigator.pop(context);
+                                          },
+                                          child: const Text('Sign out')),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
+                            child: CircleAvatar(
+                              backgroundColor: Colors.lightBlueAccent,
+                              child: Text(
+                                user.displayName[0].toUpperCase(),
+                              ),
+                            ),
+                          ),
+                      ],
                     ),
                     body: Column(
                       children: <Widget>[
