@@ -22,6 +22,8 @@ UnsplashImage _$UnsplashImageFromJson(Map<String, dynamic> json) {
 mixin _$UnsplashImage {
   @JsonKey(name: 'alt_description')
   String get description => throw _privateConstructorUsedError;
+  @JsonKey(name: 'id')
+  String get imageId => throw _privateConstructorUsedError;
   @JsonKey(name: 'urls')
   ImageUrls get smallImage => throw _privateConstructorUsedError;
   int get likes => throw _privateConstructorUsedError;
@@ -40,6 +42,7 @@ abstract class $UnsplashImageCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'alt_description') String description,
+      @JsonKey(name: 'id') String imageId,
       @JsonKey(name: 'urls') ImageUrls smallImage,
       int likes,
       @JsonKey(name: 'user') AuthorUser authorPage});
@@ -61,6 +64,7 @@ class _$UnsplashImageCopyWithImpl<$Res, $Val extends UnsplashImage> implements $
   @override
   $Res call({
     Object? description = null,
+    Object? imageId = null,
     Object? smallImage = null,
     Object? likes = null,
     Object? authorPage = null,
@@ -69,6 +73,10 @@ class _$UnsplashImageCopyWithImpl<$Res, $Val extends UnsplashImage> implements $
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageId: null == imageId
+          ? _value.imageId
+          : imageId // ignore: cast_nullable_to_non_nullable
               as String,
       smallImage: null == smallImage
           ? _value.smallImage
@@ -110,6 +118,7 @@ abstract class _$$UnsplashImage$ImplCopyWith<$Res> implements $UnsplashImageCopy
   @useResult
   $Res call(
       {@JsonKey(name: 'alt_description') String description,
+      @JsonKey(name: 'id') String imageId,
       @JsonKey(name: 'urls') ImageUrls smallImage,
       int likes,
       @JsonKey(name: 'user') AuthorUser authorPage});
@@ -130,6 +139,7 @@ class __$$UnsplashImage$ImplCopyWithImpl<$Res> extends _$UnsplashImageCopyWithIm
   @override
   $Res call({
     Object? description = null,
+    Object? imageId = null,
     Object? smallImage = null,
     Object? likes = null,
     Object? authorPage = null,
@@ -138,6 +148,10 @@ class __$$UnsplashImage$ImplCopyWithImpl<$Res> extends _$UnsplashImageCopyWithIm
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageId: null == imageId
+          ? _value.imageId
+          : imageId // ignore: cast_nullable_to_non_nullable
               as String,
       smallImage: null == smallImage
           ? _value.smallImage
@@ -160,6 +174,7 @@ class __$$UnsplashImage$ImplCopyWithImpl<$Res> extends _$UnsplashImageCopyWithIm
 class _$UnsplashImage$Impl implements UnsplashImage$ {
   const _$UnsplashImage$Impl(
       {@JsonKey(name: 'alt_description') required this.description,
+      @JsonKey(name: 'id') required this.imageId,
       @JsonKey(name: 'urls') required this.smallImage,
       required this.likes,
       @JsonKey(name: 'user') required this.authorPage});
@@ -169,6 +184,9 @@ class _$UnsplashImage$Impl implements UnsplashImage$ {
   @override
   @JsonKey(name: 'alt_description')
   final String description;
+  @override
+  @JsonKey(name: 'id')
+  final String imageId;
   @override
   @JsonKey(name: 'urls')
   final ImageUrls smallImage;
@@ -180,7 +198,7 @@ class _$UnsplashImage$Impl implements UnsplashImage$ {
 
   @override
   String toString() {
-    return 'UnsplashImage(description: $description, smallImage: $smallImage, likes: $likes, authorPage: $authorPage)';
+    return 'UnsplashImage(description: $description, imageId: $imageId, smallImage: $smallImage, likes: $likes, authorPage: $authorPage)';
   }
 
   @override
@@ -189,6 +207,7 @@ class _$UnsplashImage$Impl implements UnsplashImage$ {
         (other.runtimeType == runtimeType &&
             other is _$UnsplashImage$Impl &&
             (identical(other.description, description) || other.description == description) &&
+            (identical(other.imageId, imageId) || other.imageId == imageId) &&
             (identical(other.smallImage, smallImage) || other.smallImage == smallImage) &&
             (identical(other.likes, likes) || other.likes == likes) &&
             (identical(other.authorPage, authorPage) || other.authorPage == authorPage));
@@ -196,7 +215,7 @@ class _$UnsplashImage$Impl implements UnsplashImage$ {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, description, smallImage, likes, authorPage);
+  int get hashCode => Object.hash(runtimeType, description, imageId, smallImage, likes, authorPage);
 
   @JsonKey(ignore: true)
   @override
@@ -215,6 +234,7 @@ class _$UnsplashImage$Impl implements UnsplashImage$ {
 abstract class UnsplashImage$ implements UnsplashImage {
   const factory UnsplashImage$(
       {@JsonKey(name: 'alt_description') required final String description,
+      @JsonKey(name: 'id') required final String imageId,
       @JsonKey(name: 'urls') required final ImageUrls smallImage,
       required final int likes,
       @JsonKey(name: 'user') required final AuthorUser authorPage}) = _$UnsplashImage$Impl;
@@ -224,6 +244,9 @@ abstract class UnsplashImage$ implements UnsplashImage {
   @override
   @JsonKey(name: 'alt_description')
   String get description;
+  @override
+  @JsonKey(name: 'id')
+  String get imageId;
   @override
   @JsonKey(name: 'urls')
   ImageUrls get smallImage;

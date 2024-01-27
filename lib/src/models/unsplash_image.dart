@@ -10,6 +10,7 @@ part 'unsplash_image.g.dart';
 class UnsplashImage with _$UnsplashImage {
   const factory UnsplashImage({
     @JsonKey(name: 'alt_description') required String description,
+    @JsonKey(name: 'id') required String imageId,
     @JsonKey(name: 'urls') required ImageUrls smallImage,
     required int likes,
     @JsonKey(name: 'user') required AuthorUser authorPage,

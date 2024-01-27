@@ -4,6 +4,7 @@ import 'package:rxdart/rxdart.dart';
 import '../actions/app_action.dart';
 import '../actions/change_picture.dart';
 import '../actions/create_user.dart';
+import '../actions/get_comments.dart';
 import '../actions/get_current_user.dart';
 import '../actions/load_items.dart';
 import '../actions/login.dart';
@@ -12,6 +13,7 @@ import '../api/auth_api.dart';
 import '../api/image_api.dart';
 import '../models/app_state.dart';
 import '../models/app_user.dart';
+import '../models/comment.dart';
 import '../models/unsplash_image.dart';
 
 class AppEpics extends EpicClass<AppState> {
@@ -29,6 +31,7 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, SignOutStart>(_signOutStart).call,
       TypedEpic<AppState, LoginStart>(_loginStart).call,
       TypedEpic<AppState, ChangePictureStart>(_changePictureStart).call,
+      TypedEpic<AppState, GetCommentsStart>(_getCommentsStart).call,
     ])(actions, store);
   }
 
@@ -94,6 +97,18 @@ class AppEpics extends EpicClass<AppState> {
           .asyncMap((_) => authApi.changePicture(action.path))
           .map((AppUser user) => ChangePicture.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => ChangePicture.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _getCommentsStart(Stream<GetCommentsStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetCommentsStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) {
+            return api.getComments(action.imageId);
+          })
+          .map((List<Comment> comments) => GetComments.successful(comments))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetComments.error(error, stackTrace));
     });
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
+import '../actions/get_comments.dart';
 import '../actions/load_items.dart';
 import '../actions/set.dart';
 import '../models/app_state.dart';
@@ -139,7 +140,9 @@ class _HomePageState extends State<HomePage> {
                                     return GestureDetector(
                                       onTap: () {
                                         if (user != null) {
-                                          context.dispatch(SetSelectedImage(unsplashImage));
+                                          context
+                                            ..dispatch(SetSelectedImage(unsplashImage))
+                                            ..dispatch(GetComments(unsplashImage.imageId));
                                           Navigator.pushNamed(context, '/image');
                                         } else {
                                           Navigator.pushNamed(context, '/createUser');
