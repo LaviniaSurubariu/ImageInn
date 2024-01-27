@@ -94,23 +94,31 @@ class _HomePageState extends State<HomePage> {
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: TextField(
-                            decoration: const InputDecoration(hintText: 'search'),
-                            controller: textController,
-                            onChanged: (String value) {
-                              context.dispatch(SetQuery(value));
-                              if (context.state.query.isEmpty) {
-                                context.dispatch(const SetColor(''));
-                              }
-                              context.dispatch(const LoadItems());
-                            },
+                          child: SizedBox(
+                            height: 36,
+                            child: TextField(
+                              decoration: const InputDecoration(hintText: 'search'),
+                              controller: textController,
+                              onChanged: (String value) {
+                                context.dispatch(SetQuery(value));
+                                if (context.state.query.isEmpty) {
+                                  context.dispatch(const SetColor(''));
+                                }
+                                context.dispatch(const LoadItems());
+                              },
+                            ),
                           ),
                         ),
                         Wrap(
                           children: allColors.map(
                             (String item) {
                               return ChoiceChip(
-                                label: Text(item),
+                                label: Padding(
+                                    padding: const EdgeInsets.all(2.0),
+                                    child: Text(
+                                      item,
+                                      style: const TextStyle(fontSize: 12.0),
+                                    )),
                                 selected: context.state.color == item || false,
                                 onSelected: (bool selected) {
                                   if (context.state.query.isNotEmpty) {
@@ -165,9 +173,8 @@ class _HomePageState extends State<HomePage> {
                                                   width: 300,
                                                   height: 300,
                                                   child: Image.network(
-                                                    unsplashImage.smallImage.thumb,
-                                                    fit: BoxFit.cover,
-                                                    alignment: Alignment.bottomRight,
+                                                    unsplashImage.smallImage.small,
+                                                    fit: BoxFit.scaleDown,
                                                     loadingBuilder: (BuildContext context, Widget widget,
                                                         ImageChunkEvent? progress) {
                                                       if (progress == null) {
@@ -200,6 +207,11 @@ class _HomePageState extends State<HomePage> {
                                                 },
                                                 child: Text(unsplashImage.authorPage.links.html)),
                                           ),
+                                          const Divider(
+                                            color: Colors.lightBlueAccent,
+                                            height: 10,
+                                          ),
+                                          const SizedBox(height: 32.0),
                                         ],
                                       ),
                                     );

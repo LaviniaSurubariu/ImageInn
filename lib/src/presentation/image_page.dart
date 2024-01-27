@@ -42,6 +42,7 @@ class ImagePage extends StatelessWidget {
                       SliverToBoxAdapter(
                         child: Column(
                           children: <Widget>[
+                            const SizedBox(height: 32.0),
                             Center(
                               child: SizedBox(
                                 height: 300,
@@ -89,6 +90,7 @@ class ImagePage extends StatelessWidget {
                                 image.description ?? 'No description',
                                 style: const TextStyle(
                                   fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),
