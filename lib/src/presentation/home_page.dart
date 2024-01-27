@@ -139,7 +139,8 @@ class _HomePageState extends State<HomePage> {
                                     return GestureDetector(
                                       onTap: () {
                                         if (user != null) {
-                                          print('user is $user for movie $unsplashImage');
+                                          context.dispatch(SetSelectedImage(unsplashImage));
+                                          Navigator.pushNamed(context, '/image');
                                         } else {
                                           Navigator.pushNamed(context, '/createUser');
                                         }
@@ -151,22 +152,10 @@ class _HomePageState extends State<HomePage> {
                                             child: Row(
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: <Widget>[
-                                                Expanded(
+                                                const Expanded(
                                                   child: SizedBox(
                                                     height: 200,
-                                                    child: Column(
-                                                      children: <Widget>[
-                                                        Container(
-                                                          decoration: BoxDecoration(
-                                                            color: Colors.blue[50],
-                                                            borderRadius: BorderRadius.circular(16),
-                                                          ),
-                                                          margin:
-                                                              const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
-                                                          child: Text('${unsplashImage.likes}'),
-                                                        ),
-                                                      ],
-                                                    ),
+                                                    child: Column(),
                                                   ),
                                                 ),
                                                 SizedBox(
@@ -181,7 +170,6 @@ class _HomePageState extends State<HomePage> {
                                                       if (progress == null) {
                                                         return widget;
                                                       }
-
                                                       return SizedBox(
                                                         height: 300,
                                                         child: Center(

@@ -16,6 +16,7 @@ import 'src/epics/app_epics.dart';
 import 'src/models/app_state.dart';
 import 'src/presentation/create_user.dart';
 import 'src/presentation/home_page.dart';
+import 'src/presentation/image_page.dart';
 import 'src/presentation/login_user.dart';
 import 'src/presentation/profile_page.dart';
 import 'src/reducer/reducer.dart';
@@ -59,6 +60,7 @@ class MyApp extends StatelessWidget {
           '/createUser': (BuildContext context) => const CreateUserPage(),
           '/loginUser': (BuildContext context) => const LoginUserPage(),
           '/profile': (BuildContext context) => const ProfilePage(),
+          '/image': (BuildContext context) => const ImagePage(),
         },
       ),
     );

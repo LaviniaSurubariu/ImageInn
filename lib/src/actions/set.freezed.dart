@@ -227,3 +227,125 @@ abstract class SetColor$ implements SetColor {
   @JsonKey(ignore: true)
   _$$SetColor$ImplCopyWith<_$SetColor$Impl> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$SetSelectedImage {
+  UnsplashImage get image => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SetSelectedImageCopyWith<SetSelectedImage> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SetSelectedImageCopyWith<$Res> {
+  factory $SetSelectedImageCopyWith(SetSelectedImage value, $Res Function(SetSelectedImage) then) =
+      _$SetSelectedImageCopyWithImpl<$Res, SetSelectedImage>;
+  @useResult
+  $Res call({UnsplashImage image});
+
+  $UnsplashImageCopyWith<$Res> get image;
+}
+
+/// @nodoc
+class _$SetSelectedImageCopyWithImpl<$Res, $Val extends SetSelectedImage> implements $SetSelectedImageCopyWith<$Res> {
+  _$SetSelectedImageCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? image = null,
+  }) {
+    return _then(_value.copyWith(
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as UnsplashImage,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UnsplashImageCopyWith<$Res> get image {
+    return $UnsplashImageCopyWith<$Res>(_value.image, (value) {
+      return _then(_value.copyWith(image: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$SetSelectedImage$ImplCopyWith<$Res> implements $SetSelectedImageCopyWith<$Res> {
+  factory _$$SetSelectedImage$ImplCopyWith(_$SetSelectedImage$Impl value, $Res Function(_$SetSelectedImage$Impl) then) =
+      __$$SetSelectedImage$ImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({UnsplashImage image});
+
+  @override
+  $UnsplashImageCopyWith<$Res> get image;
+}
+
+/// @nodoc
+class __$$SetSelectedImage$ImplCopyWithImpl<$Res> extends _$SetSelectedImageCopyWithImpl<$Res, _$SetSelectedImage$Impl>
+    implements _$$SetSelectedImage$ImplCopyWith<$Res> {
+  __$$SetSelectedImage$ImplCopyWithImpl(_$SetSelectedImage$Impl _value, $Res Function(_$SetSelectedImage$Impl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? image = null,
+  }) {
+    return _then(_$SetSelectedImage$Impl(
+      null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as UnsplashImage,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetSelectedImage$Impl implements SetSelectedImage$ {
+  const _$SetSelectedImage$Impl(this.image);
+
+  @override
+  final UnsplashImage image;
+
+  @override
+  String toString() {
+    return 'SetSelectedImage(image: $image)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetSelectedImage$Impl &&
+            (identical(other.image, image) || other.image == image));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, image);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetSelectedImage$ImplCopyWith<_$SetSelectedImage$Impl> get copyWith =>
+      __$$SetSelectedImage$ImplCopyWithImpl<_$SetSelectedImage$Impl>(this, _$identity);
+}
+
+abstract class SetSelectedImage$ implements SetSelectedImage {
+  const factory SetSelectedImage$(final UnsplashImage image) = _$SetSelectedImage$Impl;
+
+  @override
+  UnsplashImage get image;
+  @override
+  @JsonKey(ignore: true)
+  _$$SetSelectedImage$ImplCopyWith<_$SetSelectedImage$Impl> get copyWith => throw _privateConstructorUsedError;
+}

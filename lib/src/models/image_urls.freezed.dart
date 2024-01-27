@@ -21,6 +21,7 @@ ImageUrls _$ImageUrlsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ImageUrls {
   String get thumb => throw _privateConstructorUsedError;
+  String get small => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -31,7 +32,7 @@ mixin _$ImageUrls {
 abstract class $ImageUrlsCopyWith<$Res> {
   factory $ImageUrlsCopyWith(ImageUrls value, $Res Function(ImageUrls) then) = _$ImageUrlsCopyWithImpl<$Res, ImageUrls>;
   @useResult
-  $Res call({String thumb});
+  $Res call({String thumb, String small});
 }
 
 /// @nodoc
@@ -47,11 +48,16 @@ class _$ImageUrlsCopyWithImpl<$Res, $Val extends ImageUrls> implements $ImageUrl
   @override
   $Res call({
     Object? thumb = null,
+    Object? small = null,
   }) {
     return _then(_value.copyWith(
       thumb: null == thumb
           ? _value.thumb
           : thumb // ignore: cast_nullable_to_non_nullable
+              as String,
+      small: null == small
+          ? _value.small
+          : small // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -63,7 +69,7 @@ abstract class _$$ImageUrls$ImplCopyWith<$Res> implements $ImageUrlsCopyWith<$Re
       __$$ImageUrls$ImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String thumb});
+  $Res call({String thumb, String small});
 }
 
 /// @nodoc
@@ -75,11 +81,16 @@ class __$$ImageUrls$ImplCopyWithImpl<$Res> extends _$ImageUrlsCopyWithImpl<$Res,
   @override
   $Res call({
     Object? thumb = null,
+    Object? small = null,
   }) {
     return _then(_$ImageUrls$Impl(
       thumb: null == thumb
           ? _value.thumb
           : thumb // ignore: cast_nullable_to_non_nullable
+              as String,
+      small: null == small
+          ? _value.small
+          : small // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -88,16 +99,18 @@ class __$$ImageUrls$ImplCopyWithImpl<$Res> extends _$ImageUrlsCopyWithImpl<$Res,
 /// @nodoc
 @JsonSerializable()
 class _$ImageUrls$Impl implements ImageUrls$ {
-  const _$ImageUrls$Impl({required this.thumb});
+  const _$ImageUrls$Impl({required this.thumb, required this.small});
 
   factory _$ImageUrls$Impl.fromJson(Map<String, dynamic> json) => _$$ImageUrls$ImplFromJson(json);
 
   @override
   final String thumb;
+  @override
+  final String small;
 
   @override
   String toString() {
-    return 'ImageUrls(thumb: $thumb)';
+    return 'ImageUrls(thumb: $thumb, small: $small)';
   }
 
   @override
@@ -105,12 +118,13 @@ class _$ImageUrls$Impl implements ImageUrls$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ImageUrls$Impl &&
-            (identical(other.thumb, thumb) || other.thumb == thumb));
+            (identical(other.thumb, thumb) || other.thumb == thumb) &&
+            (identical(other.small, small) || other.small == small));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, thumb);
+  int get hashCode => Object.hash(runtimeType, thumb, small);
 
   @JsonKey(ignore: true)
   @override
@@ -127,12 +141,14 @@ class _$ImageUrls$Impl implements ImageUrls$ {
 }
 
 abstract class ImageUrls$ implements ImageUrls {
-  const factory ImageUrls$({required final String thumb}) = _$ImageUrls$Impl;
+  const factory ImageUrls$({required final String thumb, required final String small}) = _$ImageUrls$Impl;
 
   factory ImageUrls$.fromJson(Map<String, dynamic> json) = _$ImageUrls$Impl.fromJson;
 
   @override
   String get thumb;
+  @override
+  String get small;
   @override
   @JsonKey(ignore: true)
   _$$ImageUrls$ImplCopyWith<_$ImageUrls$Impl> get copyWith => throw _privateConstructorUsedError;

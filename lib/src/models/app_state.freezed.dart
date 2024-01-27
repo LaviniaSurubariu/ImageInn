@@ -21,6 +21,7 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AppState {
   AppUser? get user => throw _privateConstructorUsedError;
+  UnsplashImage? get selectedImage => throw _privateConstructorUsedError;
   List<UnsplashImage> get unsplashImages => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
@@ -36,9 +37,17 @@ mixin _$AppState {
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
-  $Res call({AppUser? user, List<UnsplashImage> unsplashImages, bool isLoading, int page, String query, String color});
+  $Res call(
+      {AppUser? user,
+      UnsplashImage? selectedImage,
+      List<UnsplashImage> unsplashImages,
+      bool isLoading,
+      int page,
+      String query,
+      String color});
 
   $AppUserCopyWith<$Res>? get user;
+  $UnsplashImageCopyWith<$Res>? get selectedImage;
 }
 
 /// @nodoc
@@ -54,6 +63,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
   @override
   $Res call({
     Object? user = freezed,
+    Object? selectedImage = freezed,
     Object? unsplashImages = null,
     Object? isLoading = null,
     Object? page = null,
@@ -65,6 +75,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as AppUser?,
+      selectedImage: freezed == selectedImage
+          ? _value.selectedImage
+          : selectedImage // ignore: cast_nullable_to_non_nullable
+              as UnsplashImage?,
       unsplashImages: null == unsplashImages
           ? _value.unsplashImages
           : unsplashImages // ignore: cast_nullable_to_non_nullable
@@ -99,6 +113,18 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UnsplashImageCopyWith<$Res>? get selectedImage {
+    if (_value.selectedImage == null) {
+      return null;
+    }
+
+    return $UnsplashImageCopyWith<$Res>(_value.selectedImage!, (value) {
+      return _then(_value.copyWith(selectedImage: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -107,10 +133,19 @@ abstract class _$$AppState$ImplCopyWith<$Res> implements $AppStateCopyWith<$Res>
       __$$AppState$ImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AppUser? user, List<UnsplashImage> unsplashImages, bool isLoading, int page, String query, String color});
+  $Res call(
+      {AppUser? user,
+      UnsplashImage? selectedImage,
+      List<UnsplashImage> unsplashImages,
+      bool isLoading,
+      int page,
+      String query,
+      String color});
 
   @override
   $AppUserCopyWith<$Res>? get user;
+  @override
+  $UnsplashImageCopyWith<$Res>? get selectedImage;
 }
 
 /// @nodoc
@@ -122,6 +157,7 @@ class __$$AppState$ImplCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _
   @override
   $Res call({
     Object? user = freezed,
+    Object? selectedImage = freezed,
     Object? unsplashImages = null,
     Object? isLoading = null,
     Object? page = null,
@@ -133,6 +169,10 @@ class __$$AppState$ImplCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as AppUser?,
+      selectedImage: freezed == selectedImage
+          ? _value.selectedImage
+          : selectedImage // ignore: cast_nullable_to_non_nullable
+              as UnsplashImage?,
       unsplashImages: null == unsplashImages
           ? _value._unsplashImages
           : unsplashImages // ignore: cast_nullable_to_non_nullable
@@ -162,6 +202,7 @@ class __$$AppState$ImplCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _
 class _$AppState$Impl implements AppState$ {
   const _$AppState$Impl(
       {this.user,
+      this.selectedImage,
       final List<UnsplashImage> unsplashImages = const <UnsplashImage>[],
       this.isLoading = false,
       this.page = 1,
@@ -173,6 +214,8 @@ class _$AppState$Impl implements AppState$ {
 
   @override
   final AppUser? user;
+  @override
+  final UnsplashImage? selectedImage;
   final List<UnsplashImage> _unsplashImages;
   @override
   @JsonKey()
@@ -197,7 +240,7 @@ class _$AppState$Impl implements AppState$ {
 
   @override
   String toString() {
-    return 'AppState(user: $user, unsplashImages: $unsplashImages, isLoading: $isLoading, page: $page, query: $query, color: $color)';
+    return 'AppState(user: $user, selectedImage: $selectedImage, unsplashImages: $unsplashImages, isLoading: $isLoading, page: $page, query: $query, color: $color)';
   }
 
   @override
@@ -206,6 +249,7 @@ class _$AppState$Impl implements AppState$ {
         (other.runtimeType == runtimeType &&
             other is _$AppState$Impl &&
             (identical(other.user, user) || other.user == user) &&
+            (identical(other.selectedImage, selectedImage) || other.selectedImage == selectedImage) &&
             const DeepCollectionEquality().equals(other._unsplashImages, _unsplashImages) &&
             (identical(other.isLoading, isLoading) || other.isLoading == isLoading) &&
             (identical(other.page, page) || other.page == page) &&
@@ -215,8 +259,8 @@ class _$AppState$Impl implements AppState$ {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, user, const DeepCollectionEquality().hash(_unsplashImages), isLoading, page, query, color);
+  int get hashCode => Object.hash(runtimeType, user, selectedImage,
+      const DeepCollectionEquality().hash(_unsplashImages), isLoading, page, query, color);
 
   @JsonKey(ignore: true)
   @override
@@ -235,6 +279,7 @@ class _$AppState$Impl implements AppState$ {
 abstract class AppState$ implements AppState {
   const factory AppState$(
       {final AppUser? user,
+      final UnsplashImage? selectedImage,
       final List<UnsplashImage> unsplashImages,
       final bool isLoading,
       final int page,
@@ -245,6 +290,8 @@ abstract class AppState$ implements AppState {
 
   @override
   AppUser? get user;
+  @override
+  UnsplashImage? get selectedImage;
   @override
   List<UnsplashImage> get unsplashImages;
   @override

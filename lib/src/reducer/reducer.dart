@@ -25,6 +25,7 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, SignOutSuccessful>(_signOutSuccessful).call,
     TypedReducer<AppState, LoginSuccessful>(_loginSuccessful).call,
     TypedReducer<AppState, ChangePictureSuccessful>(_changePictureSuccessful).call,
+    TypedReducer<AppState, SetSelectedImage>(_setSelectedImage).call,
   ])(state, action);
 }
 
@@ -80,4 +81,8 @@ AppState _loginSuccessful(AppState state, LoginSuccessful action) {
 
 AppState _changePictureSuccessful(AppState state, ChangePictureSuccessful action) {
   return state.copyWith(user: action.user);
+}
+
+AppState _setSelectedImage(AppState state, SetSelectedImage action) {
+  return state.copyWith(selectedImage: action.image);
 }

@@ -7,6 +7,7 @@ part 'image_urls.g.dart';
 class ImageUrls with _$ImageUrls {
   const factory ImageUrls({
     required String thumb,
+    required String small,
   }) = ImageUrls$;
 
   factory ImageUrls.fromJson(Map<dynamic, dynamic> json) => _$ImageUrlsFromJson(Map<String, dynamic>.from(json));
