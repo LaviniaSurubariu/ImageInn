@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:redux/redux.dart';
+import '../actions/change_picture.dart';
 import '../actions/create_user.dart';
 import '../actions/get_current_user.dart';
 import '../actions/load_items.dart';
@@ -23,6 +24,7 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, GetCurrentUserSuccessful>(_getCurrentUserSuccessful).call,
     TypedReducer<AppState, SignOutSuccessful>(_signOutSuccessful).call,
     TypedReducer<AppState, LoginSuccessful>(_loginSuccessful).call,
+    TypedReducer<AppState, ChangePictureSuccessful>(_changePictureSuccessful).call,
   ])(state, action);
 }
 
@@ -73,5 +75,9 @@ AppState _signOutSuccessful(AppState state, SignOutSuccessful action) {
 }
 
 AppState _loginSuccessful(AppState state, LoginSuccessful action) {
+  return state.copyWith(user: action.user);
+}
+
+AppState _changePictureSuccessful(AppState state, ChangePictureSuccessful action) {
   return state.copyWith(user: action.user);
 }
