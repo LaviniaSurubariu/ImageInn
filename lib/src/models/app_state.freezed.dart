@@ -32,14 +32,12 @@ mixin _$AppState {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AppStateCopyWith<AppState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AppStateCopyWith<AppState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
-  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
-      _$AppStateCopyWithImpl<$Res, AppState>;
+  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
   $Res call(
       {AppUser? user,
@@ -57,8 +55,7 @@ abstract class $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
-    implements $AppStateCopyWith<$Res> {
+class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCopyWith<$Res> {
   _$AppStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -145,10 +142,8 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
 }
 
 /// @nodoc
-abstract class _$$AppState$ImplCopyWith<$Res>
-    implements $AppStateCopyWith<$Res> {
-  factory _$$AppState$ImplCopyWith(
-          _$AppState$Impl value, $Res Function(_$AppState$Impl) then) =
+abstract class _$$AppState$ImplCopyWith<$Res> implements $AppStateCopyWith<$Res> {
+  factory _$$AppState$ImplCopyWith(_$AppState$Impl value, $Res Function(_$AppState$Impl) then) =
       __$$AppState$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -170,12 +165,9 @@ abstract class _$$AppState$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AppState$ImplCopyWithImpl<$Res>
-    extends _$AppStateCopyWithImpl<$Res, _$AppState$Impl>
+class __$$AppState$ImplCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$AppState$Impl>
     implements _$$AppState$ImplCopyWith<$Res> {
-  __$$AppState$ImplCopyWithImpl(
-      _$AppState$Impl _value, $Res Function(_$AppState$Impl) _then)
-      : super(_value, _then);
+  __$$AppState$ImplCopyWithImpl(_$AppState$Impl _value, $Res Function(_$AppState$Impl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -248,8 +240,7 @@ class _$AppState$Impl implements AppState$ {
         _comments = comments,
         _unsplashImages = unsplashImages;
 
-  factory _$AppState$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$AppState$ImplFromJson(json);
+  factory _$AppState$Impl.fromJson(Map<String, dynamic> json) => _$$AppState$ImplFromJson(json);
 
   @override
   final AppUser? user;
@@ -306,14 +297,11 @@ class _$AppState$Impl implements AppState$ {
         (other.runtimeType == runtimeType &&
             other is _$AppState$Impl &&
             (identical(other.user, user) || other.user == user) &&
-            (identical(other.selectedImage, selectedImage) ||
-                other.selectedImage == selectedImage) &&
+            (identical(other.selectedImage, selectedImage) || other.selectedImage == selectedImage) &&
             const DeepCollectionEquality().equals(other._users, _users) &&
             const DeepCollectionEquality().equals(other._comments, _comments) &&
-            const DeepCollectionEquality()
-                .equals(other._unsplashImages, _unsplashImages) &&
-            (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading) &&
+            const DeepCollectionEquality().equals(other._unsplashImages, _unsplashImages) &&
+            (identical(other.isLoading, isLoading) || other.isLoading == isLoading) &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.query, query) || other.query == query) &&
             (identical(other.color, color) || other.color == color));
@@ -359,8 +347,7 @@ abstract class AppState$ implements AppState {
       final String query,
       final String color}) = _$AppState$Impl;
 
-  factory AppState$.fromJson(Map<String, dynamic> json) =
-      _$AppState$Impl.fromJson;
+  factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$Impl.fromJson;
 
   @override
   AppUser? get user;
@@ -382,6 +369,5 @@ abstract class AppState$ implements AppState {
   String get color;
   @override
   @JsonKey(ignore: true)
-  _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith => throw _privateConstructorUsedError;
 }

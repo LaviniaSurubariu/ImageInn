@@ -62,10 +62,13 @@ class ImagePage extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(height: 16.0),
-                            Text(
-                              image.description,
-                              style: const TextStyle(
-                                fontSize: 16.0,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                image.description,
+                                style: const TextStyle(
+                                  fontSize: 16.0,
+                                ),
                               ),
                             ),
                             const SizedBox(height: 16.0),

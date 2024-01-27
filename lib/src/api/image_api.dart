@@ -29,7 +29,6 @@ class ImageApi {
         ),
         headers: <String, String>{'Authorization': 'Client-ID $_accessKey'},
       );
-      print(response.body);
 
       final Map<String, dynamic> jsonBody = json.decode(response.body) as Map<String, dynamic>;
 
@@ -44,7 +43,6 @@ class ImageApi {
         ),
         headers: <String, String>{'Authorization': 'Client-ID $_accessKey'},
       );
-      print(response.body);
 
       imgData = json.decode(response.body) as List<dynamic>;
     }

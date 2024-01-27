@@ -127,12 +127,10 @@ class AppEpics extends EpicClass<AppState> {
         .flatMap((CreateCommentStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) {
-        return api.createComment(
-            imageId: store.state.selectedImage!.imageId,
-            text: action.text,
-            uid: store.state.user!.uid);
-      })
-            .map((Comment comment) => CreateComment.successful(comment))
+            return api.createComment(
+                imageId: store.state.selectedImage!.imageId, text: action.text, uid: store.state.user!.uid);
+          })
+          .map((Comment comment) => CreateComment.successful(comment))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => CreateComment.error(error, stackTrace));
     });
   }

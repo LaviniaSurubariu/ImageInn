@@ -55,7 +55,7 @@ class AuthApi {
     return _extractUser();
   }
 
-  Future<AppUser> _extractUser() async{
+  Future<AppUser> _extractUser() async {
     final User user = _auth.currentUser!;
     final DocumentReference<Map<String, dynamic>> ref = _firestore.doc('users/${user.uid}');
     final DocumentSnapshot<Map<String, dynamic>> doc = await ref.get();
@@ -76,6 +76,7 @@ class AuthApi {
 
     return appUser;
   }
+
   Future<List<AppUser>> getUsers(List<String> uids) async {
     final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore
         .collection('users') //

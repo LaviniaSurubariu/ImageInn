@@ -64,14 +64,12 @@ mixin _$CreateComment {
 
 /// @nodoc
 abstract class $CreateCommentCopyWith<$Res> {
-  factory $CreateCommentCopyWith(
-          CreateComment value, $Res Function(CreateComment) then) =
+  factory $CreateCommentCopyWith(CreateComment value, $Res Function(CreateComment) then) =
       _$CreateCommentCopyWithImpl<$Res, CreateComment>;
 }
 
 /// @nodoc
-class _$CreateCommentCopyWithImpl<$Res, $Val extends CreateComment>
-    implements $CreateCommentCopyWith<$Res> {
+class _$CreateCommentCopyWithImpl<$Res, $Val extends CreateComment> implements $CreateCommentCopyWith<$Res> {
   _$CreateCommentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,19 +80,17 @@ class _$CreateCommentCopyWithImpl<$Res, $Val extends CreateComment>
 
 /// @nodoc
 abstract class _$$CreateCommentStartImplCopyWith<$Res> {
-  factory _$$CreateCommentStartImplCopyWith(_$CreateCommentStartImpl value,
-          $Res Function(_$CreateCommentStartImpl) then) =
+  factory _$$CreateCommentStartImplCopyWith(
+          _$CreateCommentStartImpl value, $Res Function(_$CreateCommentStartImpl) then) =
       __$$CreateCommentStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String text});
 }
 
 /// @nodoc
-class __$$CreateCommentStartImplCopyWithImpl<$Res>
-    extends _$CreateCommentCopyWithImpl<$Res, _$CreateCommentStartImpl>
+class __$$CreateCommentStartImplCopyWithImpl<$Res> extends _$CreateCommentCopyWithImpl<$Res, _$CreateCommentStartImpl>
     implements _$$CreateCommentStartImplCopyWith<$Res> {
-  __$$CreateCommentStartImplCopyWithImpl(_$CreateCommentStartImpl _value,
-      $Res Function(_$CreateCommentStartImpl) _then)
+  __$$CreateCommentStartImplCopyWithImpl(_$CreateCommentStartImpl _value, $Res Function(_$CreateCommentStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -139,8 +135,7 @@ class _$CreateCommentStartImpl implements CreateCommentStart {
   @override
   @pragma('vm:prefer-inline')
   _$$CreateCommentStartImplCopyWith<_$CreateCommentStartImpl> get copyWith =>
-      __$$CreateCommentStartImplCopyWithImpl<_$CreateCommentStartImpl>(
-          this, _$identity);
+      __$$CreateCommentStartImplCopyWithImpl<_$CreateCommentStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -212,20 +207,17 @@ class _$CreateCommentStartImpl implements CreateCommentStart {
 }
 
 abstract class CreateCommentStart implements CreateComment {
-  const factory CreateCommentStart(final String text) =
-      _$CreateCommentStartImpl;
+  const factory CreateCommentStart(final String text) = _$CreateCommentStartImpl;
 
   String get text;
   @JsonKey(ignore: true)
-  _$$CreateCommentStartImplCopyWith<_$CreateCommentStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CreateCommentStartImplCopyWith<_$CreateCommentStartImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$CreateCommentSuccessfulImplCopyWith<$Res> {
   factory _$$CreateCommentSuccessfulImplCopyWith(
-          _$CreateCommentSuccessfulImpl value,
-          $Res Function(_$CreateCommentSuccessfulImpl) then) =
+          _$CreateCommentSuccessfulImpl value, $Res Function(_$CreateCommentSuccessfulImpl) then) =
       __$$CreateCommentSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Comment comment});
@@ -238,8 +230,7 @@ class __$$CreateCommentSuccessfulImplCopyWithImpl<$Res>
     extends _$CreateCommentCopyWithImpl<$Res, _$CreateCommentSuccessfulImpl>
     implements _$$CreateCommentSuccessfulImplCopyWith<$Res> {
   __$$CreateCommentSuccessfulImplCopyWithImpl(
-      _$CreateCommentSuccessfulImpl _value,
-      $Res Function(_$CreateCommentSuccessfulImpl) _then)
+      _$CreateCommentSuccessfulImpl _value, $Res Function(_$CreateCommentSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -291,9 +282,8 @@ class _$CreateCommentSuccessfulImpl implements CreateCommentSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CreateCommentSuccessfulImplCopyWith<_$CreateCommentSuccessfulImpl>
-      get copyWith => __$$CreateCommentSuccessfulImplCopyWithImpl<
-          _$CreateCommentSuccessfulImpl>(this, _$identity);
+  _$$CreateCommentSuccessfulImplCopyWith<_$CreateCommentSuccessfulImpl> get copyWith =>
+      __$$CreateCommentSuccessfulImplCopyWithImpl<_$CreateCommentSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -365,30 +355,27 @@ class _$CreateCommentSuccessfulImpl implements CreateCommentSuccessful {
 }
 
 abstract class CreateCommentSuccessful implements CreateComment {
-  const factory CreateCommentSuccessful(final Comment comment) =
-      _$CreateCommentSuccessfulImpl;
+  const factory CreateCommentSuccessful(final Comment comment) = _$CreateCommentSuccessfulImpl;
 
   Comment get comment;
   @JsonKey(ignore: true)
-  _$$CreateCommentSuccessfulImplCopyWith<_$CreateCommentSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$CreateCommentSuccessfulImplCopyWith<_$CreateCommentSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$CreateCommentErrorImplCopyWith<$Res> {
-  factory _$$CreateCommentErrorImplCopyWith(_$CreateCommentErrorImpl value,
-          $Res Function(_$CreateCommentErrorImpl) then) =
+  factory _$$CreateCommentErrorImplCopyWith(
+          _$CreateCommentErrorImpl value, $Res Function(_$CreateCommentErrorImpl) then) =
       __$$CreateCommentErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$CreateCommentErrorImplCopyWithImpl<$Res>
-    extends _$CreateCommentCopyWithImpl<$Res, _$CreateCommentErrorImpl>
+class __$$CreateCommentErrorImplCopyWithImpl<$Res> extends _$CreateCommentCopyWithImpl<$Res, _$CreateCommentErrorImpl>
     implements _$$CreateCommentErrorImplCopyWith<$Res> {
-  __$$CreateCommentErrorImplCopyWithImpl(_$CreateCommentErrorImpl _value,
-      $Res Function(_$CreateCommentErrorImpl) _then)
+  __$$CreateCommentErrorImplCopyWithImpl(_$CreateCommentErrorImpl _value, $Res Function(_$CreateCommentErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -428,20 +415,17 @@ class _$CreateCommentErrorImpl implements CreateCommentError {
         (other.runtimeType == runtimeType &&
             other is _$CreateCommentErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$CreateCommentErrorImplCopyWith<_$CreateCommentErrorImpl> get copyWith =>
-      __$$CreateCommentErrorImplCopyWithImpl<_$CreateCommentErrorImpl>(
-          this, _$identity);
+      __$$CreateCommentErrorImplCopyWithImpl<_$CreateCommentErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -513,13 +497,10 @@ class _$CreateCommentErrorImpl implements CreateCommentError {
 }
 
 abstract class CreateCommentError implements CreateComment, ErrorAction {
-  const factory CreateCommentError(
-          final Object error, final StackTrace stackTrace) =
-      _$CreateCommentErrorImpl;
+  const factory CreateCommentError(final Object error, final StackTrace stackTrace) = _$CreateCommentErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$CreateCommentErrorImplCopyWith<_$CreateCommentErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CreateCommentErrorImplCopyWith<_$CreateCommentErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

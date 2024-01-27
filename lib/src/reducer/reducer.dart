@@ -102,6 +102,7 @@ AppState _getCommentsSuccessful(AppState state, GetCommentsSuccessful action) {
 AppState _createCommentSuccessful(AppState state, CreateCommentSuccessful action) {
   return state.copyWith(comments: <Comment>[action.comment, ...state.comments]);
 }
+
 AppState _getUsersSuccessful(AppState state, GetUsersSuccessful action) {
   return state.copyWith(
     users: <String, AppUser>{
