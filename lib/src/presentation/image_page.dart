@@ -155,7 +155,7 @@ class ImagePage extends StatelessWidget {
                 context: context,
                 builder: (BuildContext context) {
                   return AlertDialog(
-                    title: const Text('Add your review'),
+                    title: const Text('Add your comment'),
                     content: TextField(
                       controller: controller,
                     ),
